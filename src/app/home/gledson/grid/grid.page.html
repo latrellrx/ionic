@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Grid de Pessoas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngFor="let p of sessao.pessoa">
+    <ion-row value="Dados Pessoais">
+      <ion-col>
+        {{p.nome}}
+      </ion-col>
+      <ion-col>
+        {{p.nascimento}}
+      </ion-col>
+      <ion-col>
+        {{p.sexo}}
+      </ion-col>
+    </ion-row>
+    <ion-row value="Endereco">
+      <ion-col>
+        {{p.endereco.descricao}}
+      </ion-col>
+      <ion-col>
+        {{p.endereco.complemento}}
+      </ion-col>
+      <ion-col>
+        {{p.endereco.numero}}
+      </ion-col>
+    </ion-row>
+    <ion-row value="Contato">
+      <ion-col>
+        {{p.contato.nome}}
+      </ion-col>
+      <ion-col>
+        {{p.contato.email}}
+      </ion-col>
+      <ion-col>
+        {{p.contato.telefone}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

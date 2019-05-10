@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> Gledson</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>{{passos[indice]}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div *ngIf="passos[indice] == 'dadosPessoais'">
+    <ion-item>
+      <ion-label> Nome</ion-label>
+      <ion-input [(ngModel)]="person.nome"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label> Nome</ion-label>
+      <ion-input [(ngModel)]="person.nascimento" type="date"></ion-input>
+    </ion-item>    
+    <ion-radio-group [(ngModel)]="person.sexo">
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio slot="start" value="false" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio slot="start" value="true"></ion-radio>
+      </ion-item>
+    </ion-radio-group>    
+  </div>
+  <div *ngIf="passos[indice] == 'endereco'">
+    <ion-item>
+      <ion-label> Descrição</ion-label>
+      <ion-input [(ngModel)]="person.endereco.descricao"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label> Complemento </ion-label>
+      <ion-input [(ngModel)]="person.endereco.complemento"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label> Número </ion-label>
+      <ion-input [(ngModel)]="person.endereco.numero"></ion-input>
+    </ion-item>    
+  </div>
+  <div *ngIf="passos[indice] == 'contato'">
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input [(ngModel)]="person.contato.nome"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label> Email </ion-label>
+      <ion-input [(ngModel)]="person.contato.email"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label> Número </ion-label>
+      <ion-input [(ngModel)]="person.contato.telefone" type="tel"></ion-input>
+    </ion-item>    
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="voltar()">Voltar</ion-button>
+    <ion-button (click)="avancar()">{{(!validar) ? 'Avançar' : 'Gravar'}}</ion-button>   
+  </ion-toolbar>
+</ion-footer>
