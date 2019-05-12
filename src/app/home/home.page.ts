@@ -15,4 +15,7 @@ export class HomePage {
   irTelaGledson() {
     this.router.navigate(['gledson']);
   }
+  irTelaCaio(){
+    this.router.navigate(['caio']);
+  }
 }

@@ -28,7 +28,7 @@ export class GledsonPage implements OnInit {
       nascimento: new Date(),
       sexo: false,
       endereco: new Endereco(),
-      contato: {nome: 'Gledson', email: 'teste', telefone: 32131232}
+      contato: { email: 'teste', telefone: 32131232,celular : 123}
     }
   }
 
