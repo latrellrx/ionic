@@ -1,13 +1,57 @@
 <ion-header>
-  <ion-toolbar color = "primary">
-    <ion-title >caio</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>caio</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-     <ion-title>{{pagina[indice]}} </ion-title>
+    <ion-title> {{pagina[indice]}} </ion-title>
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
+  <div *ngIf="pagina[indice] == 'dados Pessoais'">
+    <ion-item>
+      <ion-label> Nome</ion-label>
+      <ion-input [(ngModel)]="person.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data de Nascimento</ion-label>
+      <ion-input [(ngModel)]="person.nascimento"></ion-input>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="person.sexo">
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio slot="start" value="false" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio slot="start" value="true"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </div>
+  <div *ngIf="pagina[indice] == 'endereço'">
+    <ion-item>
+      <ion-label>descriçâo</ion-label>
+      <ion-input [(ngModel)]="person.endereco.descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>nùmero</ion-label>
+      <ion-input [(ngModel)]="person.endereco.numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Complemento</ion-label>
+      <ion-input [(ngModel)]="person.endereco.complemento"></ion-input>
+    </ion-item>
+  </div>
+
+
+
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="voltar()">Voltar</ion-button>
+    <ion-button (click)="avancar()">Avançar</ion-button>
+  </ion-toolbar>
+</ion-footer>

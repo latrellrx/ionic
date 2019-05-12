@@ -10,7 +10,7 @@ import { Endereco } from 'src/app/objetos/interfaces/Endereco';
 export class CaioPage implements OnInit {
   person: Pessoa;
   pessoas : Pessoa [] = [];
-  indice : number;
+  indice : number = 0;
   pagina : string [] = ['dados pessoais','endereço','contato'];
   constructor() { }
 
