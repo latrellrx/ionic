@@ -12,7 +12,7 @@ import { Endereco } from 'src/app/objetos/interfaces/Endereco';
 export class GledsonPage implements OnInit {
   pessoas: Pessoa[] = [];
   person: Pessoa;
-  passos: string[] = ['dadosPessoais', 'endereco', 'contato'];
+  passos: string[] = ['dados Pessoais', 'endereco', 'contato'];
   passoAtual: number = 0;
   indice: number = 0
   validar: boolean = false;

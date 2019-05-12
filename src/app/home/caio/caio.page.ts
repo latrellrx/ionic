@@ -9,6 +9,9 @@ import { Endereco } from 'src/app/objetos/interfaces/Endereco';
 })
 export class CaioPage implements OnInit {
   person: Pessoa;
+  pessoas : Pessoa [] = [];
+  indice : number;
+  pagina : string [] = ['dados pessoais','endereço','contato'];
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +23,17 @@ export class CaioPage implements OnInit {
       contato: { email: 'teste', telefone: 32131232,celular : 123}
 
 
+    }
+  }
+
+  avancar(){
+    if (this.indice <= this.pagina.length){
+      this.indice++;
+    }
+  }
+  voltar(){
+    if(this.indice > 0){
+      this.indice--;
     }
   }
 
