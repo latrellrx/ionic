@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="pagina[indice] == 'dados Pessoais'">
+  <div *ngIf="pagina[indice] == 'dados pessoais'">
     <ion-item>
       <ion-label> Nome</ion-label>
       <ion-input [(ngModel)]="person.nome"></ion-input>
@@ -43,7 +43,21 @@
       <ion-input [(ngModel)]="person.endereco.complemento"></ion-input>
     </ion-item>
   </div>
+  <div *ngIf="pagina[indice] == 'contato'">
+    <ion-item>
+      <ion-label>E-mail</ion-label>
+      <ion-input [(ngModel)]="person.contato.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Telefone</ion-label>
+      <ion-input [(ngModel)]="person.contato.telefone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Celular</ion-label>
+      <ion-input [(ngModel)]="person.contato.celular"></ion-input>
+    </ion-item>
 
+  </div>
 
 
 

@@ -27,7 +27,7 @@ export class CaioPage implements OnInit {
   }
 
   avancar(){
-    if (this.indice <= this.pagina.length){
+    if (this.indice < this.pagina.length){
       this.indice++;
     }
   }
